@@ -54,8 +54,14 @@ document.addEventListener("DOMContentLoaded",()=>{
                 document.body.appendChild(p)
             }
         }else{
+            let bold = document.createElement("span");
+            let str = document.createElement("span");
+            bold.innerText = h3.innerText;
+            bold.style.fontWeight = "bold"
             let li = document.createElement("li");
-            li.innerText = `${h3.innerText}: ${input.value}`
+            str.innerText = `: ${input.value}`;
+            li.appendChild(bold);
+            li.appendChild(str);
             list.appendChild(li)
         }
         
