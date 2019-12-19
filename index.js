@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded",()=>{
-    let body = document.querySelector("body");
     let form = document.querySelector("form");
     let list = document.querySelector("ul");
     let input = document.querySelector("#review");
     let h3 = document.createElement("h3");
+
     // let h1 = document.createElement("h1");
     // h1.innerText = "Ghibli Review App";
     // body.appendChild(h1);
@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             films.forEach(film => {
                 let option = document.createElement("option");
                 option.innerText = film.title;
-                option.value = film.url
+                option.value = film.url;
+                // debugger
                 select.appendChild(option);               
             });
         }
@@ -43,7 +44,6 @@ document.addEventListener("DOMContentLoaded",()=>{
         }catch(error){
         }
     }
-    getFilms()
     form.addEventListener("submit", (e) =>{
         e.preventDefault();
         let p = document.createElement("p")
@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         }else{
             let li = document.createElement("li");
-            li.innerText = `${h3.value}: ${input.value}`
-            debugger
+            li.innerText = `${h3.innerText}: ${input.value}`
             list.appendChild(li)
         }
         
